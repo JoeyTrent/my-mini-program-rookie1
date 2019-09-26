@@ -1,0 +1,21 @@
+<!--pages/list/list.wxml-->
+<import src="/pages/template/list_template.wxml" />
+<view>
+    <swiper catchtap="carouselToDetail" indicator-dots indicator-color="yellowgreen" indicator-active-color="pink">
+      <swiper-item>
+       <image data-index="0" src="/images/detail/carousel/hmbb1.jpg"></image></swiper-item>
+      <swiper-item>
+       <image data-index="1" src="/images/detail/carousel/hmbb2.jpg"></image></swiper-item>
+      <swiper-item>
+       <image data-index="2" src="/images/detail/carousel/hmbb3.jpg"></image></swiper-item>
+      <swiper-item>
+       <image data-index="3" src="/images/detail/carousel/hmbb4.jpg"></image></swiper-item>
+    </swiper>
+  <block wx:for='{{listArr}}' wx:key='{{index}}'>
+  <view catchtap='toDetail' data-index='{{index}}'>
+    <template is="listTmp" data='{{...item}}'/>
+  </view>
+  </block>
+</view>
+
+
